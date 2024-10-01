@@ -8,12 +8,13 @@
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            margin: 0;
+            margin: 10;
             padding: 0;
             background-color: #f4f4f4;
         }
+    /* Cadre adresse et site web aide */
         .header {
-            background-color: #008eb7;
+            background-color: #008eb7; /* Couleur modifiée */
             color: white;
             padding: 0 10px;
             height: 25pt;
@@ -22,11 +23,13 @@
             justify-content: space-between;
             overflow: hidden;
         }
+
         .header-left {
             flex: 1;
             overflow: hidden;
             white-space: nowrap;
         }
+
         .header-right {
             display: flex;
             align-items: center;
@@ -34,34 +37,77 @@
             overflow: hidden;
             white-space: nowrap;
         }
+
         .header-text {
-            font-size: 8px;
-            margin: 0;
+            font-size: 8px; /* Taille de police uniforme pour les deux côtés */
+            margin: 0; /* Supprime les marges par défaut */
         }
+    /* Cadre logo et aide full */
         .content {
             text-align: center;
-            padding: 7px;
+            padding: 7px; /* Réduit le padding à 5px */
         }
+        .logo {
+            display: block;
+            margin: 5px auto; /* Réduit la marge à 5px */
+            width: 150px;
+        }
+    /* Cadre Image */
         .station-image {
-            width: 100%;
-            height: 55px;
-            object-fit: cover;
+            width: 100%; /* S'étend sur toute la largeur de l'écran */
+            height: 55px; /* Définit une hauteur fixe de 75 pixels */
+            object-fit: cover; /* Rognage pour conserver les proportions */
             display: block;
         }
+        .title {
+            background-color: #88C9F2;
+            padding: 7px; /* Réduit le padding à 5px */
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+        }
+        .info-container {
+            background-color: white;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            height: 40pt;
+            display: flex;
+            align-items: center;
+            padding: 7px;
+            margin: 10; /* Supprime les marges autour de la boîte */
+            text-align: center;
+        }
+
+        .info-container img {
+            width: 50px; /* Fixe la largeur à 50 pixels pour mieux contrôler la taille */
+            height: auto; /* Ajuste automatiquement la hauteur */
+            object-fit: cover; /* Conserve les proportions */
+            margin-right: 20px; /* Ajoute un petit espace entre l'image et le texte */
+        }
+
+        .info-container p {
+            margin: 0; /* Supprime les marges par défaut */
+            font-size: 12px; /* Taille de la police */
+            color: #333;
+            font-family: 'Segoe UI', sans-serif; /* Utiliser la police Segoe UI */
+        }
+    /* Titre transport boues  */
         .section-title {
             font-size: 16px;
             color: black;
             text-align: left;
             margin-top: 10px;
-            font-weight: normal;
-            font-family: 'Segoe UI', sans-serif;
+            font-weight: normal; /* Retire le gras */
+            font-family: 'Segoe UI', sans-serif; /* Applique la police Segoe UI */
         }
+
         .blue-line {
             width: 100%;
             height: 0.5px;
             background-color: #008eb7;
             border: none;
-            margin: 10px 0;
+            margin: 0px 0;
+            
         }
         /* Styles pour l'iframe de la carte */
         #map {
@@ -82,11 +128,22 @@
         </div>
     </div>
 
+    <!-- Nouveau cadre sous l'entête -->
+    <div class="info-container">
+        <a href="https://www.aide.be" target="_blank"> <!-- Lien qui ouvre www.aide.be dans un nouvel onglet -->
+            <img src="https://drive.google.com/thumbnail?id=11o9CDr-nMBnwjgFVlSYCvxM3p-vo1k13&sz=w1000" alt="AIDE Logo">
+        </a>
+        <p>Association intercommunale pour le démergement<br>et l'épuration des communes de la province de Liège</p>
+    </div>
+
     <div class="content">
         <img src="https://drive.google.com/thumbnail?id=1Nq2bf8korEomxjniFaid4EFyKyO9hqE0&sz=w1000" alt="Station d'épuration" class="station-image">
+        
+        <!-- Nouveau titre et ligne bleue -->
         <h2 class="section-title">Transport des boues</h2>
         <hr class="blue-line">
     </div>
+ 
 
     <!-- Conteneur pour la carte sous forme d'iframe -->
     <iframe id="map" src="map_content.html"></iframe>
